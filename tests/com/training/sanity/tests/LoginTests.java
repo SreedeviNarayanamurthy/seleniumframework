@@ -42,10 +42,10 @@ public class LoginTests {
 	
 	@AfterMethod
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		//driver.quit();
 	}
-	@Test(priority=0)
+	@Test(priority=0,enabled=false)
 	public void validLoginTest() throws InterruptedException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
@@ -58,10 +58,11 @@ public class LoginTests {
 		loginPOM.clickButtonFilterforcustomer();
 		loginPOM.ordercheckbox1();
 		loginPOM.orderdeletebutton();
+		screenShot.captureScreenShot("Test 1 and 2");
 		
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1,enabled=false)
 	public void validLoginTest1() throws InterruptedException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
@@ -72,5 +73,74 @@ public class LoginTests {
 		loginPOM.clickreturnButtonFilter();
 		loginPOM.returnorderidbycustomer("reva sharma");
 		loginPOM.clickretunButtonFilterforcustomer();
+		screenShot.captureScreenShot("Testcase3");
+	}
+	
+	@Test(priority=3,enabled=true)
+	public void validLoginTest3(){
+		loginPOM.sendUserName("admin");
+		loginPOM.sendPassword("admin@123");
+		loginPOM.clickLoginBtn(); 
+		loginPOM.clickMainMenu();
+		loginPOM.clickCatalog();
+		loginPOM.clickFirstRow();
+		loginPOM.clickDataTab();
+		loginPOM.sendquantity("60");
+		loginPOM.clickDataDiscount();
+		loginPOM.clickAddDiscount();
+		loginPOM.discountQuantity1("5");
+		loginPOM.discountPrice1("100");
+		loginPOM.discountStartDate("20-05-2020");
+		loginPOM.discountEndDate("21-05-2020");
+		loginPOM.discountSave();
+		
+	}
+	@Test(priority=2,enabled=true)
+	public void validLoginTest4()
+	{
+		loginPOM.sendUserName("admin");
+		loginPOM.sendPassword("admin@123");
+		loginPOM.clickLoginBtn(); 
+		loginPOM.clickMainMenu2();
+		loginPOM.clickCatalog2();
+		loginPOM.addnew();
+		loginPOM.sendproductname("Finger Ring");
+		loginPOM.sendproducttitle("Finger Ring for ladies");
+		loginPOM.clickData();
+		loginPOM.sendmodel("SKU-012");
+		loginPOM.sendprice("600");
+		loginPOM.sendquantity("60");
+		loginPOM.clickLink();
+		loginPOM.selectcategory("EARRINGS");
+		loginPOM.clickLDiscount();
+		loginPOM.clickLAddDiscount();
+		loginPOM.discountQuantity("1");
+		loginPOM.discountPrice("50");
+		loginPOM.clickDateStart();
+		loginPOM.sendStartDate("2020-05-20");
+		loginPOM.sendEndDate("2020-05-21");
+		loginPOM.clickRewardTab();
+		loginPOM.clickRewardPoint("20");
+		loginPOM.clickSave();
+		
+		
+	}
+	
+	@Test(priority=1,enabled=true)
+	public void validLoginTest5()
+	{
+		loginPOM.sendUserName("admin");
+		loginPOM.sendPassword("admin@123");
+		loginPOM.clickLoginBtn(); 
+		loginPOM.clickMainMenu3();
+		loginPOM.clickMarketing();
+		loginPOM.addnewcoupon();
+		loginPOM.inputName("Republic Day");
+		loginPOM.inputCode("RepD");
+		loginPOM.inputDiscount("10");
+		loginPOM.inputProduct("A Finger Ring");
+		loginPOM.inputDateStart("2020-05-20");
+		loginPOM.inputDateEnd("2020-05-21");
+		loginPOM.clickSaveCoupon();
 	}
 }	
