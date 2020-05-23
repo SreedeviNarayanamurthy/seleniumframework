@@ -1,37 +1,37 @@
 package com.training.bean;
 
 public class LoginBean {
-	private String userName;
-	private String password;
+	private String productname;
+	private String quantity;
 
 	public LoginBean() {
 	}
 
-	public LoginBean(String userName, String password) {
+	public LoginBean(String productname, String quantity) {
 		super();
-		this.userName = userName;
-		this.password = password;
+		this.productname = productname;
+		this.quantity = quantity;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getproductname() {
+		return productname;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setproductname(String productname) {
+		this.productname = productname;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getquantity() {
+		return quantity;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setquantity(String quantity) {
+		this.quantity = quantity;
 	}
 
 	@Override
 	public String toString() {
-		return "LoginBean [userName=" + userName + ", password=" + password + "]";
+		return "LoginBean [productname=" + productname + ", quantity=" + quantity + "]";
 	}
 
 }

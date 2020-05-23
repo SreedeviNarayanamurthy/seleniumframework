@@ -76,7 +76,7 @@ public class LoginTests {
 		screenShot.captureScreenShot("Testcase3");
 	}
 	
-	@Test(priority=3,enabled=true)
+	@Test(priority=3,enabled=false)
 	public void validLoginTest3(){
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
@@ -95,7 +95,7 @@ public class LoginTests {
 		loginPOM.discountSave();
 		
 	}
-	@Test(priority=2,enabled=true)
+	@Test(priority=2,enabled=false)
 	public void validLoginTest4()
 	{
 		loginPOM.sendUserName("admin");
@@ -126,7 +126,7 @@ public class LoginTests {
 		
 	}
 	
-	@Test(priority=1,enabled=true)
+	@Test(priority=1,enabled=false)
 	public void validLoginTest5()
 	{
 		loginPOM.sendUserName("admin");
